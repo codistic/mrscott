@@ -54,9 +54,9 @@ Make this a valid selector. All elements that match this selector will be append
 #### `data-mrscott-import`
 
 Make this a valid url in the current domain (won't work with external domains). This content will be pulled in and appended when the `data-mrscott-query` is matched.
-a
+
 ## Dependencies
-mrscott requires [jquery.js](http://jquery.com/) and [enquire.js](http://wicky.nillia.ms/enquire.js/).
+mrscott requires [jQuery](http://jquery.com/) and [enquire.js](http://wicky.nillia.ms/enquire.js/).
 
 ## License
 mrscott is distributed under the MIT license as tweetware. If you like it, please tweet about it.
