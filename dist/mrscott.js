@@ -1,4 +1,4 @@
-//     mrscott.js 0.1.0
+//     mrscott.js 0.2.0
 //     (c) 2013 Jason Stehle
 //     mrscott.js may be freely distributed under the MIT license.
 
@@ -15,13 +15,16 @@
 					target = $this.data('mrscott-append'),
 					unmatchFuncTarget,
 					enquireArg,
-					args;
-		
+					args,
+					shouldDegrade = !!($this.data('mrscott-fallback'));
+				
+				
+				
 				if (target) { //append by selector
 					enquire.register(query, function () {
 						//console.log('FIRING', query, target);
 						$this.append($(target));
-					}).listen();
+					}, shouldDegrade).listen();
 					return;
 				}
 				
@@ -38,7 +41,7 @@
 							//console.log('UNFIRING', query, target);
 							$this.empty();
 						}
-					}).listen();
+					}, shouldDegrade).listen();
 					return;
 				}
 				
@@ -69,7 +72,7 @@
 						enquireArg.unmatch = function () { $this.empty(); };
 					}
 					
-					enquire.register(query, enquireArg).listen();
+					enquire.register(query, enquireArg, shouldDegrade).listen();
 					
 					return;
 				}

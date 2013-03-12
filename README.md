@@ -55,8 +55,19 @@ Make this a valid selector. All elements that match this selector will be append
 
 Make this a valid url in the current domain (won't work with external domains). This content will be pulled in and appended when the `data-mrscott-query` is matched.
 
+### Legacy Browser Fallback
+
+```html
+<div data-mrscott-import="external-file.html" data-mrscott-query="(min-width: 980px)" data-mrscott-fallback="1"></div>
+```
+#### `data-mrscott-fallback`
+
+This attribute will make older browsers (IE8-) match this query. 
+
 ## Dependencies
 mrscott requires [jQuery](http://jquery.com/) and [enquire.js](http://wicky.nillia.ms/enquire.js/).
+
+For IE9 support, include [matchMedia](https://github.com/paulirish/matchMedia.js/) or [respond.js](https://github.com/scottjehl/Respond)
 
 ## License
 mrscott is distributed under the MIT license as tweetware. If you like it, please tweet about it.
